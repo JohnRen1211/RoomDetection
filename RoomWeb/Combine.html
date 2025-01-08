@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-900">
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="bg-orange-600 w-16 h-screen flex flex-col items-center py-4 space-y-8 sticky top-0">
+            <a href="#dashboard" class="text-white text-2xl">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="#rooms" class="text-white text-2xl">
+                <i class="fas fa-th-large"></i>
+            </a>
+            <a href="#schedule" class="text-white text-2xl">
+                <i class="fas fa-calendar-alt"></i>
+            </a>
+            <a href="#logs" class="text-white text-2xl">
+                <i class="fas fa-cog"></i>
+            </a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="mb-10">
+                <h1 class="text-3xl text-orange-600 font-bold">Dashboard</h1>
+                <div class="text-white text-lg">MONDAY, January 6</div>
+                <div class="flex items-center space-x-4 mb-6">
+                    <i class="fas fa-search text-orange-600 text-2xl"></i>
+                    <i class="fas fa-bell text-orange-600 text-2xl"></i>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Rooms -->
+                    <div class="bg-white p-4 rounded-lg shadow-lg col-span-2">
+                        <h2 class="text-lg font-semibold mb-4">Rooms</h2>
+                        <div class="flex justify-center mb-4">
+                            <div class="grid grid-cols-6 gap-2">
+                                <div class="bg-green-500 text-white text-center p-2 rounded">300</div>
+                                <div class="bg-red-500 text-white text-center p-2 rounded">316</div>
+                                <div class="bg-red-500 text-white text-center p-2 rounded">315</div>
+                                <div class="bg-red-500 text-white text-center p-2 rounded">314</div>
+                                <div class="bg-red-500 text-white text-center p-2 rounded">313</div>
+                                <div class="bg-red-500 text-white text-center p-2 rounded">312</div>
+                                <div class="bg-red-500 text-white text-center p-2 rounded">311</div>
+                                <div class="bg-green-500 text-white text-center p-2 rounded">310</div>
+                            </div>
+                        </div>
+                        <div class="text-center text-sm text-gray-500">Select area to view room details</div>
+                        <div class="flex justify-center mt-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-green-500 w-4 h-4 rounded"></div>
+                                <div class="text-sm">Vacant</div>
+                            </div>
+                            <div class="flex items-center space-x-2 ml-4">
+                                <div class="bg-red-500 w-4 h-4 rounded"></div>
+                                <div class="text-sm">Occupied</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Room Status -->
+                    <div class="bg-white p-4 rounded-lg shadow-lg">
+                        <h2 class="text-lg font-semibold mb-4">Room status</h2>
+                        <div class="text-red-500 font-bold text-lg mb-4">OCCUPIED</div>
+                        <div class="text-sm mb-2"><strong>Room no.:</strong> R-313</div>
+                        <div class="text-sm mb-2"><strong>Room Type:</strong> Computer Laboratory</div>
+                        <div class="text-sm mb-2"><strong>Occupied by:</strong> BSCPe 4-4</div>
+                        <div class=" text-sm mb-2"><strong>Population:</strong> 45</div>
+                        <div class="text-sm mb-2"><strong>Instructor:</strong> Engr. Mah</div>
+                        <div class="text-sm mb-2"><strong>Subject:</strong> CMPE 30224 - CAO</div>
+                        <button class="bg-red-500 text-white py-2 px-4 rounded mt-4">LEAVE ROOM</button>
+                    </div>
+                    <!-- Room Schedule -->
+                    <div class="bg-white p-4 rounded-lg shadow-lg col-span-2">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-lg font-semibold">Room Schedule</h2>
+                            <a href="#" class="text-orange-600 text-sm">View all</a>
+                        </div>
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="text-left">
+                                    <th class="pb-2">Time</th>
+                                    <th class="pb-2">Section</th>
+                                    <th class="pb-2">Subject</th>
+                                    <th class="pb-2">Instructor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-1">7:30 AM - 11:30 AM</td>
+                                    <td class="py-1">BSCPe 4-4</td>
+                                    <td class="py-1">CMPE 30224 - CAO</td>
+                                    <td class="py-1">Engr. Mah</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">10:30 AM - 1:30 PM</td>
+                                    <td class="py-1">BSCPe 4-4</td>
+                                    <td class="py-1">CMPE 30224 - CAO</td>
+                                    <td class="py-1">Engr. Mah</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">2:00 PM - 5:00 PM</td>
+                                    <td class="py-1">BSCPe 4-4</td>
+                                    <td class="py-1">CMPE 30224 - CAO</td>
+                                    <td class="py-1">Engr. Mah</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">6:00 PM - 8:00 PM</td>
+                                    <td class="py-1">BSCPe 4-4</td>
+                                    <td class="py-1">CMPE 30224 - CAO</td>
+                                    <td class="py-1">Engr. Mah</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty Box -->
+                    <div class="bg-white p-4 rounded-lg shadow-lg"></div>
+                </div>
+            </section>
+
+            <!-- Rooms Section -->
+            <section id="rooms" class="mb-10">
+                <h1 class="text-3xl font-bold text-orange-600">Rooms</h1>
+                <div class="flex h-screen">
+                    <div class="flex-1 bg-white p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h1 class="text-2xl font-semibold text-orange-600">Rooms</h1>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-search text-orange-600 text-xl"></i>
+                                <i class="fas fa-bell text-orange-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6">
+                            <div class="bg-white shadow-md rounded-lg p-4 w-1/2">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-lg font-semibold">Rooms in CPE</h2>
+                                    <div class="flex space-x-2">
+                                        <i class="fas fa-plus text-green-600 text-xl"></i>
+                                        <i class="fas fa-edit text-orange-600 text-xl"></i>
+                                        <i class="fas fa-trash text-red-600 text-xl"></i>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2">
+                                    <li class="flex justify-between items-center p-2 border-b">
+                                        <span>ROOM 310</span>
+                                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                    </li>
+                                    <li class="flex justify <span>ROOM 311</span>
+                                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                    </li>
+                                    <li class="flex justify-between items-center p-2 border-b">
+                                        <span>ROOM 312</span>
+                                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                    </li>
+                                    <li class="flex justify-between items-center p-2 border-b">
+                                        <span>ROOM 313</span>
+                                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                    </li>
+                                    <li class="flex justify-between items-center p-2 border-b">
+                                        <span>ROOM 314</span>
+                                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                    </li>
+                                    <li class="flex justify-between items-center p-2 border-b">
+                                        <span>ROOM 315</span>
+                                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                    </li>
+                                    <li class="flex justify-between items-center p-2 border-b">
+                                        <span>ROOM 316</span>
+                                        <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-white shadow-md rounded-lg p-4 w-1/2">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-lg font-semibold">Room status</h2>
+                                    <span class="text-red-600 font-semibold">OCCUPIED</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span>Room no.</span>
+                                        <span>R-313</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Room Type</span>
+                                        <span>Computer Laboratory</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Occupied by</span>
+                                        <span>BSCpE 4 - 4</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Population</span>
+                                        <span>45</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Instructor</span>
+                                        <span>Engr. Mah</span>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold">EQUIPMENT LISTS</h3>
+                                        <div class="flex justify-between">
+                                            <span>Number of Chairs</span>
+                                            <span>50</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Number of Fan</span>
+                                            <span>4</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Number of TV</span>
+                                            <span>1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg">LEAVE ROOM</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Schedule Section -->
+            <section id="schedule" class="mb-10">
+                <h1 class="text-3xl font-bold text-orange-600">Schedule</h1>
+                <div class="flex h-screen">
+                    <div class="flex-1 bg-white p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h1 class="text-2xl font-semibold text-orange-600">Schedule</h1>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-search text-orange-600 text-xl"></i>
+                                <i class="fas fa-bell text-orange-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6">
+                            <div class="bg-white shadow-md rounded-lg p-4 w-1/3">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="text-lg font-semibold">Room Schedule</h2>
+                                    <span class="text-red-600 font-bold">OCCUPIED</span>
+                                </div>
+                                <div class="mb-4">
+                                    <p><strong>Room no.:</strong> R-313</p>
+                                    <p><strong>Room Type:</strong> Computer Laboratory</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-center font-semibold mb-2"> ROOM 313 SCHEDULE</h3>
+                                    <table class="w-full text-left">
+                                        <thead>
+                                            <tr>
+                                                <th class="py-2">Time</th>
+                                                <th class="py-2">Section</th>
+                                                <th class="py-2">Subject</th>
+                                                <th class="py-2">Instructor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="py-2">7:30 AM - 10:30 AM</td>
+                                                <td class="py-2">BSCpE 4-4</td>
+                                                <td class="py-2">CMPE 3024 - CAO</td>
+                                                <td class="py-2">Engr. Mah</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2">10:30 AM - 1:30 PM</td>
+                                                <td class="py-2">BSCpE 4-4</td>
+                                                <td class="py-2">CMPE 3024 - CAO</td>
+                                                <td class="py-2">Engr. Mah</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2">1:30 PM - 4:30 PM</td>
+                                                <td class="py-2">BSCpE 4-4</td>
+                                                <td class="py-2">CMPE 3024 - CAO</td>
+                                                <td class="py-2">Engr. Mah</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2">2:00 PM - 5:00 PM</td>
+                                                <td class="py-2">BSCpE 4-4</td>
+                                                <td class="py-2">CMPE 3024 - CAO</td>
+                                                <td class="py-2">Engr. Mah</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2">6:00 PM - 9:00 PM</td>
+                                                <td class="py-2">BSCpE 4-4</td>
+                                                <td class="py-2">CMPE 3024 - CAO</td>
+                                                <td class="py-2">Engr. Mah</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logs Section -->
+            <section id="logs" class="mb-10">
+                <h1 class="text-3xl font-bold text-orange-600">Logs</h1>
+                <div class="flex h-screen">
+                    <div class="flex-1 p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h1 class="text-2xl font-semibold text-orange-600">Logs</h1>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-search text-orange-600 text-xl"></i>
+                                <i class="fas fa-bell text-orange-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="relative">
+                                    <select class="appearance-none bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                        <option>Select Room</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <i class="fas fa-download text-orange-600 text-2xl"></i>
+                            </div>
+                            <table class="min-w-full bg-white">
+                                <thead>
+                                    <tr>
+                                        <th class="py-2 px-4 border-b border-gray-200 text-left text-sm font-semibold text-gray-600">Date</th>
+                                        <th class="py-2 px-4 border-b border-gray-200 text-left text-sm font-semibold text-gray-600">Time In</th>
+                                        <th class="py-2 px-4 border-b border-gray-200 text-left text-sm font-semibold text-gray-600">Time Out</th>
+                                        <th class="py-2 px-4 border-b border-gray ```html
+                                        <th class="py-2 px-4 border-b border-gray-200 text-left text-sm font-semibold text-gray-600">Subject</th>
+                                        <th class="py-2 px-4 border-b border-gray-200 text-left text-sm font-semibold text-gray-600">Occupant</th>
+                                        <th class="py-2 px-4 border-b border-gray-200 text-left text-sm font-semibold text-gray-600">Population</th>
+                                        <th class="py-2 px-4 border-b border-gray-200 text-left text-sm font-semibold text-gray-600">Instructor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Jan 6, 2025</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">10:30 AM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">1:30 PM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">CMPE 30224 - CAO</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">BSCpE 4-4</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">45</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Engr. Mah</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Jan 6, 2025</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">10:30 AM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">1:30 PM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">CMPE 30224 - CAO</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">BSCpE 4-4</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">45</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Engr. Mah</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Jan 6, 2025</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">10:30 AM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">1:30 PM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">CMPE 30224 - CAO</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">BSCpE 4-4</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">45</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Engr. Mah</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Jan 6, 2025</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">10:30 AM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">1:30 PM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">CMPE 30224 - CAO</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray- ```html
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">BSCpE 4-4</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">45</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Engr. Mah</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Jan 6, 2025</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">10:30 AM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">1:30 PM</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">CMPE 30224 - CAO</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">BSCpE 4-4</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">45</td>
+                                        <td class="py-2 px-4 border-b border-gray-200 text-sm text-gray-700">Engr. Mah</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
