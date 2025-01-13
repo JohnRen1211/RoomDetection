@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Firebase Table</title>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC596FfPU-P_YTCqYm9r0rgG6qHJgKylLI",
+            authDomain: "ir-sensor-12f24.firebaseapp.com",
+            databaseURL: "https://ir-sensor-12f24-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "ir-sensor-12f24",
+            storageBucket: "ir-sensor-12f24.firebasestorage.app",
+            messagingSenderId: "446997968149",
+            appId: "1:446997968149:web:7bd88b68ba185e9480251c"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Reference to the data in Firebase
+        const dataRef = ref(database, 'students'); // Change 'students' to your actual data path
+
+        // Function to update the table with data from Firebase
+        function updateTable(snapshot) {
+            const table = document.getElementById('data-table');
+            // Clear existing rows except for the header
+            table.innerHTML = `
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            `;
+            snapshot.forEach(childSnapshot => {
+                const childData = childSnapshot.val();
+                const newRow = table.insertRow();
+                newRow.innerHTML = `
+                    <td>${childSnapshot.key}</td>
+                    <td>${childData.name}</td>
+                    <td>${childData.age}</td> <!-- Changed from score to age -->
+                `;
+            });
+        }
+
+        // Listen for changes in the data
+        onValue(dataRef, updateTable);
+    </script>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Dynamic Data Table</h2>
+
+<table id="data-table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+</table>
+
+</body>
+</html>
