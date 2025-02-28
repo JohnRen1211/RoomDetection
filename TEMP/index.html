@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Data Display</title>
+  <!-- Firebase v8 SDK (No import) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    .data {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    .data span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Temperature and Humidity Data</h1>
+
+  <div class="data">
+    <p><span>Temperature:</span> <span id="temp">Loading...</span> °C</p>
+    <p><span>Humidity:</span> <span id="humidity">Loading...</span> %</p>
+  </div>
+
+  <script>
+    // Firebase Configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCpx8WLJsKnpKgm5qluMuSJlDAH3cpeLp4",
+        authDomain: "temperature-8a8a0.firebaseapp.com",
+        databaseURL: "https://temperature-8a8a0-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "temperature-8a8a0",
+        storageBucket: "temperature-8a8a0.firebasestorage.app",
+        messagingSenderId: "438177440674",
+        appId: "1:438177440674:web:3aa6e76082a5a11d30c8fb"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Reference to the temperature and humidity data in Firebase
+    const tempRef = db.ref("Sensor/temperature");
+    const humidityRef = db.ref("Sensor/humidity");
+
+    // Fetch data and update the HTML elements
+    tempRef.on("value", (snapshot) => {
+      const temp = snapshot.val();
+      document.getElementById("temp").textContent = temp ? temp : "N/A";
+    });
+
+    humidityRef.on("value", (snapshot) => {
+      const humidity = snapshot.val();
+      document.getElementById("humidity").textContent = humidity ? humidity : "N/A";
+    });
+  </script>
+  
+</body>
+</html>
